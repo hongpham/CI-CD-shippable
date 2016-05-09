@@ -1,13 +1,21 @@
-language: none
+language: node_js
 
 node_js:
   - 5.3
 
 build:
   pre_ci:
-    - docker build -t hongpham12/docker-centos-phamh:shippablev-v.0.0.1
+    - docker build -t hongpham12/docker-centos-phamh:shippable
+  ci:
+
+  post_ci:
+    - docker push hongpham12/docker-centos-phamh:shippable
+
 
 integrations:
   hub:
     - integrationName: hongpham-dockerhub
       type: docker
+      branches:
+          only:
+            - master
