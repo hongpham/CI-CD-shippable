@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-  - 5.3
+
 build:
   pre_ci:
     - docker build -t hongpham12/docker-centos-phamh:shippable
