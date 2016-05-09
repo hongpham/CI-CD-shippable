@@ -1,0 +1,15 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - "5.3"
+
+build:
+  pre_ci:
+    docker build -t hongpham12/docker-centos-phamh:shippablev-v.0.0.1
+
+integrations:
+  hub:
+    - integrationName: hongpham-dockerhub
+      type: docker

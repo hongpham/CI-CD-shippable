@@ -1,0 +1,10 @@
+{
+  "name": "docker-centos-phamh",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Dockerize Nodejs Express App",
+  "author": "Hongnhung Pham <hong.n.pham@gmail.com>",
+  "dependencies": {
+    "express": "3.2.4"
+  }
+}
