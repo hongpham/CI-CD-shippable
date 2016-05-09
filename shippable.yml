@@ -1,25 +1,21 @@
-# Language setting
-language: node_js
+language: python
 
-# Version number
 node_js:
-  - "5.3"
-
-services:
-  - selenium
+  - 2.7
 
 build:
+  pre_ci:
+    - docker build -t hongpham12/docker-centos-phamh:shippable
   ci:
-    - sudo npm install
-    - export DISPLAY=:99.0
-    - xvfb-run --server-args="-ac" npm test
+
+  post_ci:
+    - docker push hongpham12/docker-centos-phamh:shippable
+
 
 integrations:
-  deploy:
-    - integrationName: "hongpham-aws-EB"
-      type: aws
-      target: eb_paas
-      platform: "Node.js"
-      application_name: ShippableDocker
-      env_name: sample-phamh-ver1
-      region: us-east-1
+  hub:
+    - integrationName: hongpham-dockerhub
+      type: docker
+      branches:
+          only:
+            - master
