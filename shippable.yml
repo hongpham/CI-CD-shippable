@@ -1,7 +1,9 @@
-language: python
+# language setting
+language: node_js
 
+# version numbers
 node_js:
-  - 2.7
+  - "0.12"
 
 build:
   pre_ci:
