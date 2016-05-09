@@ -5,7 +5,7 @@ node_js:
 
 build:
   pre_ci:
-    docker build -t hongpham12/docker-centos-phamh:shippablev-v.0.0.1
+    - docker build -t hongpham12/docker-centos-phamh:shippablev-v.0.0.1
 
 integrations:
   hub:
